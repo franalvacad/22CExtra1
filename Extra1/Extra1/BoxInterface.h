@@ -2,7 +2,8 @@
 #ifndef _BOX_INTERFACE
 #define _BOX_INTERFACE
 
-template < class ItemType > class BoxInterface
+template < class ItemType > 
+class BoxInterface
 {
 public:
 

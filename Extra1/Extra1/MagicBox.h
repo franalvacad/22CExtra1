@@ -2,7 +2,8 @@
 #ifndef _MAGIC_BOX
 #define _MAGIC_BOX
 #include "PlainBox.h"
-template < class ItemType > class MagicBox :public PlainBox < ItemType >
+template < class ItemType >
+class MagicBox :public PlainBox < ItemType >
 {
 private:
 	bool firstItemStored;

@@ -1,23 +1,23 @@
 /** @file PlainBox.cpp */
-template < class ItemType >;
-
+#include "PlainBox.h"
+template < class ItemType >
 PlainBox < ItemType >::PlainBox()
 {
 }   // end default constructor
 
-template < class ItemType >;
+template < class ItemType >
 PlainBox < ItemType >::PlainBox(const ItemType & theItem)
 {
 	item = theItem;
 }   // end constructor
 
-template < class ItemType >;
+template < class ItemType >
 void PlainBox < ItemType >::setItem(const ItemType & theItem)
 {
 	item = theItem;
 }   // end setItem
 
-template < class ItemType >;
+template < class ItemType >
 ItemType PlainBox < ItemType >::getItem() const const
 {
 	return item;

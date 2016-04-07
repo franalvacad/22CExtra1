@@ -1,10 +1,11 @@
 /** @file PlainBox.h */
 #ifndef _PLAIN_BOX
 #define _PLAIN_BOX
-template < class ItemType >;	// Indicates this is a template defi nition
+#include "BoxInterface.h"	// Include the implementation file
+template < class ItemType >	// Indicates this is a template defi nition
 // Declaration for the class PlainBox
 
-class PlainBox
+class PlainBox :public BoxInterface <ItemType>
 {
 private:
 	// Data fi eld
@@ -24,6 +25,4 @@ public:
 	ItemType getItem() const;
 
 };  // end PlainBox
-
-#include "PlainBox.cpp"	// Include the implementation file
 #endif

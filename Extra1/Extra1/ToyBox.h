@@ -8,7 +8,8 @@ enum Color
 	BLACK, RED, BLUE, GREEN, YELLOW, WHITE
 };
 
-template < class ItemType > class ToyBox :public PlainBox < ItemType >
+template < class ItemType >
+class ToyBox :public PlainBox < ItemType >
 {
 private:
 	Color boxColor;
@@ -23,5 +24,5 @@ public:
 
 };  // end ToyBox
 
-#include "ToyBox.cpp"
+
 #endif
