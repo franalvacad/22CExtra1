@@ -11,8 +11,7 @@ private:
 public:
 	MagicBox();
 	MagicBox(const ItemType & theItem);
-
-	void setItem(const ItemType & theItem);
+	void setMItem(const ItemType & theItem);
 
 };  // end MagicBox
 #endif

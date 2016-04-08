@@ -18,7 +18,7 @@ void PlainBox < ItemType >::setItem(const ItemType & theItem)
 }   // end setItem
 
 template < class ItemType >
-ItemType PlainBox < ItemType >::getItem() const const
+ItemType PlainBox < ItemType >::getItem() const 
 {
 	return item;
 }   // end getItem

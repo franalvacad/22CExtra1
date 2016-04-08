@@ -2,13 +2,13 @@
 #ifndef _PLAIN_BOX
 #define _PLAIN_BOX
 #include "BoxInterface.h"	// Include the implementation file
-template < class ItemType >	// Indicates this is a template defi nition
+template < class ItemType >	// Indicates this is a template definition
 // Declaration for the class PlainBox
 
 class PlainBox :public BoxInterface <ItemType>
 {
 private:
-	// Data fi eld
+	// Data field
 	ItemType item;
 
 public:
@@ -18,10 +18,10 @@ public:
 	// Parameterized constructor
 	PlainBox(const ItemType & theItem);
 
-	// Mutator method that can change the value of the data fi eld
+	// Mutator method that can change the value of the data field
 	void setItem(const ItemType & theItem);
 
-	// Accessor method to get the value of the data fi eld
+	// Accessor method to get the value of the data field
 	ItemType getItem() const;
 
 };  // end PlainBox
