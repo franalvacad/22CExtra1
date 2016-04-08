@@ -1,6 +1,7 @@
 /** @file BoxInterface.h */
 #ifndef _BOX_INTERFACE
 #define _BOX_INTERFACE
+#include <string>
 
 template < class ItemType > 
 class BoxInterface
