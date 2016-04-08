@@ -15,6 +15,4 @@ public:
 	void setItem(const ItemType & theItem);
 
 };  // end MagicBox
-
-#include "MagicBox.cpp"
 #endif

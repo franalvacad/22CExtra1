@@ -17,13 +17,13 @@ ToyBox < ItemType >::ToyBox(const Color & theColor)
 template < class ItemType > 
 ToyBox < ItemType >::ToyBox(const ItemType & theItem, const Color & theColor)
 {	
-	PlainBox <ItemType >();
+
 	PlainBox < ItemType >::setItem(theItem);
-	PlainBox < ItemType >();
 	boxColor = theColor;
 }   // end constructor
 
-template < class ItemType > Color ToyBox < ItemType >::getColor() constconst
+template < class ItemType > 
+Color ToyBox < ItemType >::getColor() const
 {
 	return boxColor;
 }   // end getColor
