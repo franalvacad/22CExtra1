@@ -1,11 +1,9 @@
 /*Pseudocode: 
-	1. Ask user to decide toys item.
-	2. Start loop with the menue with list of option, where user can decide what to do next:
+	1. Ask user to decide toy box color.
+	2. Start loop with the menu list with options, where user can decide what to do next:
 		1st Add a new trick to the magic box.
 		2nd Add a new toy to the toy box.
-		3rd Exit the loop.
-		4th see toys in the toy box and their colour.
-		5th see magic tricks inside the magic box.
+		3rd Exit the loop, reporting all the data in the boxes.
 	3. End the program.
 	Made by Francisco Alvarez and Andrei Konovalov  
 */
@@ -22,9 +20,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 using namespace std;
 int main() {
-	
-	
-
 	
 	string strm;
 	string strt;
@@ -66,10 +61,9 @@ int main() {
 		case '1':
 			{
 				string trick;
-				cout << "Enter a magic trick in the form of a sentence. When finished, press <tab>, then <return>:\n ";
+				cout << "Enter a magic trick in the form of a sentence. When finished, press <tab>, then <return>:\n "; //to add multiple lines if needed
 				getline(cin, trick, '	');
 				strm.append(trick);
-				strm.append("\n");
 				mb.setItem(strm);
 				mItems = mb.getItem();
 				break;
@@ -81,7 +75,7 @@ int main() {
 				cout << "Enter a toy: ";
 				cin.ignore();
 				getline(cin, toy);
-				strt.append(toy);
+				strt.append(toy); //add to the toy string
 				tb.setItem(strt);
 				cout << endl;
 				items = tb.getItem();
@@ -89,7 +83,7 @@ int main() {
 			}
 		case'3':
 			{
-				   cout << "Your " << colores[tb.getColor()] << " box of toys contains " << items << ";" << endl << "Your box of magic contains the tricks : "<< mItems;
+				cout << "Your " << colores[tb.getColor()] << " box of toys contains " << items << ";" << endl << endl << "Your box of magic contains the tricks : " << mItems;
 				mainMenu = true;
 				break;
 			}
