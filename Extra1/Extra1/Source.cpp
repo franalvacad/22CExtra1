@@ -1,3 +1,14 @@
+/*Pseudocode: 
+	1. Ask user to decide toys item.
+	2. Start loop with the menue with list of option, where user can decide what to do next:
+		1st Add a new trick to the magic box.
+		2nd Add a new toy to the toy box.
+		3rd Exit the loop.
+		4th see toys in the toy box and their colour.
+		5th see magic tricks inside the magic box.
+	3. End the program.
+	Made by Francisco Alvarez and Andrei Konovalov  
+*/
 #include "MagicBox.h"
 #include "MagicBox.cpp"
 #include "ToyBox.h"
