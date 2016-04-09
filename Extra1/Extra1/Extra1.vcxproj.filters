@@ -27,9 +27,6 @@
     <ClCompile Include="MagicBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DelteThisAfterCopyDataIntoMain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PlainBox.h">

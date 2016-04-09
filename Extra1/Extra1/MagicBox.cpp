@@ -9,7 +9,7 @@ MagicBox < ItemType >::MagicBox()
 }   // end default constructor
 
 template < class ItemType > 
-MagicBox < ItemType >::MagicBox(const ItemType & theItem)
+MagicBox < ItemType >::MagicBox(const ItemType & theItem) :PlainBox < ItemType >(theItem)
 {
 	firstItemStored = true;	// Box has no magic initially
 
