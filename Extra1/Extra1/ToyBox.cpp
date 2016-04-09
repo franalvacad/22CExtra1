@@ -17,8 +17,6 @@ ToyBox < ItemType >::ToyBox(const Color & theColor) :PlainBox < ItemType >()
 template < class ItemType > 
 ToyBox < ItemType >::ToyBox(const ItemType & theItem, const Color & theColor) :PlainBox < ItemType >(theItem)
 {	
-
-	PlainBox < ItemType >::setItem(theItem);
 	boxColor = theColor;
 }   // end constructor
 

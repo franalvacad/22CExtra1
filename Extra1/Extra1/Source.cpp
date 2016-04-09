@@ -12,66 +12,65 @@
 using namespace std;
 int main() {
 	
-	/*BoxInterface<string> *pMb = new ToyBox<string>("bear",RED);*/
-	//*pMb(RED, "bear");
 	
+	
+	ToyBox<string> tb;
+	MagicBox<string> mb;
+	string strm;
+	string strt;
 	char chs;
-	cout << "Let's work with..." << endl <<
-			"1: Magic!" << endl <<
-			"2: Toys!" << endl;
-	cin >> chs;
-	if (islower(chs))
-		chs = toupper(chs);
-
-	switch (chs)
+	bool mainMenu = 0;
+	string colores[6] = { "Black", "Red", "Blue", "Green", "Yellow", "White" };
+	
+	while (!mainMenu)
 	{
-	default:
-		break;
-	case '1':
-		{
-			string trick;
-			cout << "Enter a magic trick in the form of a sentence. Use <tab> to enter";
-			getline(cin, trick, '	');
+		cout << "Let's work with..." << endl <<
+			"1: Magic!" << endl <<
+			"2: Toys!" << endl <<
+			"3: Exit!" << endl <<
+			"4: see your toys and their colour" << endl <<
+			"5: see your magic tricks" << endl;
+		cin >> chs;
 
-			ToyBox <string> daBox(trick);
 
-			break;
-		}
-	case '2':
+		switch (chs)
 		{
-			string toy;
-			int colour;
-			Color chosen;
-			bool loop = 0, fullLoop = 0;
-			char reLoop;
-	
-			while (!fullLoop)
+		default:
+					break;
+		case '1':
 			{
-				cout << "Enter a toy: "; 
-				getline(cin, toy);
-	
-				cout << endl;
-	
-				while (!loop)
-				{
-					cout << "Pick a color or -1 to exit: BLACK(1), RED(2), BLUE(3), GREEN(4), YELLOW(5), WHITE(6): ";
-					cin >> colour;
-	
-					if (colour < 6)
-						loop = 1;
-				}
-	
-				colour--;
-				chosen = (Color)(colour);
-	
-				ToyBox<string> daBox(toy, chosen);
-	
-				cout << "Stored in the toy box is a " << daBox.getItem() << " and the box is color " << daBox.getColor();
+					string trick;
+					cout << "Enter a magic trick in the form of a sentence. Use <tab> to enter ";
+					getline(cin, trick, '	');
+					strm.append(trick);
+					mb.setItem(strm);
+					break;
 			}
-			break;
+		case '2':
+			{
+					string toy;					
+					cout << "Enter a toy: ";
+					cin.ignore();
+					getline(cin, toy);
+					strt.append(toy);
+					tb.setItem(strt);
+					cout << endl;
+					break;
+			}
+		case'3':
+			{
+					break;
+			}
+		case '4':
+			{
+					cout << "Your toys colour is: " << /*______*/ ". Your toys are: " << tb.getItem() << endl;
+			}
+		case '5':
+			{
+					cout << "Your magic tricks are: " << mb.getItem() << endl;
+			}
 		}
 	}
-
 	
 	system("pause");
 	return 0;
