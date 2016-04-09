@@ -13,15 +13,31 @@ using namespace std;
 int main() {
 	
 	
+
 	
-	ToyBox<string> tb;
-	MagicBox<string> mb;
 	string strm;
 	string strt;
 	char chs;
 	bool mainMenu = 0;
 	string colores[6] = { "Black", "Red", "Blue", "Green", "Yellow", "White" };
+	int color = 0;
+	Color colour;
 	
+	do
+	{
+		cout << "Black(1), Red(2), Blue(3), Green(4), Yellow(5), White(6)";
+		cout << "Pick a box color: ";
+		cin >> color;
+	} while (color > 6);
+
+	color--;//shift it to match enum
+	colour = (Color)(color);//force color into variable
+
+	ToyBox<string> tb(colour); //use color constructor
+	MagicBox<string> mb;
+
+	system("cls");
+
 	while (!mainMenu)
 	{
 		cout << "Let's work with..." << endl <<
@@ -39,36 +55,32 @@ int main() {
 					break;
 		case '1':
 			{
-					string trick;
-					cout << "Enter a magic trick in the form of a sentence. Use <tab> to enter ";
-					getline(cin, trick, '	');
-					strm.append(trick);
-					mb.setItem(strm);
-					break;
+				string trick;
+				cout << "Enter a magic trick in the form of a sentence. Use <tab> to enter ";
+				getline(cin, trick, '	');
+				strm.append(trick);
+				strm.append("/n");
+				mb.setItem(strm);
+				break;
 			}
 		case '2':
 			{
-					string toy;					
-					cout << "Enter a toy: ";
-					cin.ignore();
-					getline(cin, toy);
-					strt.append(toy);
-					tb.setItem(strt);
-					cout << endl;
-					break;
+				string toy;
+				cout << "Right now, these toys are in your box: " << tb.getItem() << endl;
+				cout << "Enter a toy: ";
+				cin.ignore();
+				getline(cin, toy);
+				strt.append(toy);
+				tb.setItem(strt);
+				cout << endl;
+				break;
 			}
 		case'3':
 			{
-					break;
+				   cout << "Your " << colores[tb.getColor()] << " box of toys contains " << tb.getItem() << ";"<<endl <<  "Your box of magic contains the tricks : "<<endl << mb.getItem()<<".";
+				break;
 			}
-		case '4':
-			{
-					cout << "Your toys colour is: " << /*______*/ ". Your toys are: " << tb.getItem() << endl;
-			}
-		case '5':
-			{
-					cout << "Your magic tricks are: " << mb.getItem() << endl;
-			}
+
 		}
 	}
 	
