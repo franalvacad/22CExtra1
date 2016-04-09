@@ -8,13 +8,12 @@
 #include <string>
 #include <iomanip>
 #include <string.h>
-#include <vector>
 #define _CRT_SECURE_NO_WARNINGS
 using namespace std;
 int main() {
 	
-	vector <ToyBox<string>> Tb;
-	vector <MagicBox<string>> Mb;
+	/*BoxInterface<string> *pMb = new ToyBox<string>("bear",RED);*/
+	//*pMb(RED, "bear");
 	
 	char chs;
 	cout << "Let's work with..." << endl <<
@@ -33,7 +32,9 @@ int main() {
 			string trick;
 			cout << "Enter a magic trick in the form of a sentence. Use <tab> to enter";
 			getline(cin, trick, '	');
-			Mb.push_back(trick);
+
+			ToyBox <string> daBox(trick);
+
 			break;
 		}
 	case '2':
@@ -47,9 +48,7 @@ int main() {
 			while (!fullLoop)
 			{
 				cout << "Enter a toy: "; 
-				cin.ignore();
 				getline(cin, toy);
-				cin.ignore();
 	
 				cout << endl;
 	
@@ -64,12 +63,10 @@ int main() {
 	
 				colour--;
 				chosen = (Color)(colour);
-				//vector <ToyBox<string>> T1b(toy, chosen);
-				Tb.push_back(chosen);
-
-				//ToyBox<string> daBox(toy, chosen);
-				Tb.back().setItem(toy);
-				cout << "Stored in the toy box is a " << Tb.back().getItem() << " and the box is color " << Tb.back().getColor();
+	
+				ToyBox<string> daBox(toy, chosen);
+	
+				cout << "Stored in the toy box is a " << daBox.getItem() << " and the box is color " << daBox.getColor();
 			}
 			break;
 		}

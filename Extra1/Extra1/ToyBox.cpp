@@ -8,14 +8,14 @@ ToyBox < ItemType >::ToyBox()
 }   // end default constructor
 
 template < class ItemType >
-ToyBox < ItemType >::ToyBox(const Color & theColor)
+ToyBox < ItemType >::ToyBox(const Color & theColor) :PlainBox < ItemType >()
 {
-	PlainBox < ItemType >();
+
 	boxColor = theColor;
 }   // end constructor
 
 template < class ItemType > 
-ToyBox < ItemType >::ToyBox(const ItemType & theItem, const Color & theColor) //:PlainBox < ItemType >(theItem)
+ToyBox < ItemType >::ToyBox(const ItemType & theItem, const Color & theColor) :PlainBox < ItemType >(theItem)
 {	
 
 	PlainBox < ItemType >::setItem(theItem);
