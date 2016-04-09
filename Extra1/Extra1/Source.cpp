@@ -11,12 +11,17 @@
 using namespace std;
 int main() {
 	
-	/*BoxInterface<string> *pMb = new ToyBox<string>("bear",RED);*/
-	//*pMb(RED, "bear");
-	//cout << "Let's work with..." << endl <<
-	//		"1: Magic!" << endl <<
-	//		"2: Toys!" << endl;
-
+	BoxInterface<string> *pTb = new ToyBox<string>[1]();
+	BoxInterface<string> *pMb = new MagicBox<string>[1]();
+	
+	
+	if (pTb.length() < 2)
+	
+		//*pMb(RED, "bear");
+	cout << "Let's work with..." << endl <<
+		"1: Magic!" << endl <<
+		"2: Toys!" << endl;
+	
 
 	string toy;
 	int colour;

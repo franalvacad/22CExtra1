@@ -78,6 +78,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DelteThisAfterCopyDataIntoMain.cpp" />
     <ClCompile Include="MagicBox.cpp" />
     <ClCompile Include="PlainBox.cpp" />
     <ClCompile Include="Source.cpp" />

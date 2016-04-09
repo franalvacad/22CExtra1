@@ -1,0 +1,1 @@
+if (pTB.length() < 2)
