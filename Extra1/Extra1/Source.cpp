@@ -28,20 +28,21 @@ int main() {
 	
 	string strm;
 	string strt;
+	string items = "nothing" , mItems = "nothing";
 	char chs;
 	bool mainMenu = 0;
-	string colores[6] = { "Black", "Red", "Blue", "Green", "Yellow", "White" };
+	string colores[6] = { "Black", "Red", "Blue", "Green", "Yellow", "White" }; //array to denote colors in enum
 	int color = 0;
 	Color colour;
 	
 	do
 	{
-		cout << "Black(1), Red(2), Blue(3), Green(4), Yellow(5), White(6)";
+		cout << "Black(1), Red(2), Blue(3), Green(4), Yellow(5), White(6)" << endl;
 		cout << "Pick a box color: ";
 		cin >> color;
 	} while (color > 6);
 
-	color--;//shift it to match enum
+	color--; //shift it to match enum
 	colour = (Color)(color);//force color into variable
 
 	ToyBox<string> tb(colour); //use color constructor
@@ -54,9 +55,7 @@ int main() {
 		cout << "Let's work with..." << endl <<
 			"1: Magic!" << endl <<
 			"2: Toys!" << endl <<
-			"3: Exit!" << endl <<
-			"4: see your toys and their colour" << endl <<
-			"5: see your magic tricks" << endl;
+			"3: Exit!" << endl;
 		cin >> chs;
 
 
@@ -67,11 +66,12 @@ int main() {
 		case '1':
 			{
 				string trick;
-				cout << "Enter a magic trick in the form of a sentence. Use <tab> to enter ";
+				cout << "Enter a magic trick in the form of a sentence. When finished, press <tab>, then <return>:\n ";
 				getline(cin, trick, '	');
 				strm.append(trick);
-				strm.append("/n");
+				strm.append("\n");
 				mb.setItem(strm);
+				mItems = mb.getItem();
 				break;
 			}
 		case '2':
@@ -84,17 +84,20 @@ int main() {
 				strt.append(toy);
 				tb.setItem(strt);
 				cout << endl;
+				items = tb.getItem();
 				break;
 			}
 		case'3':
 			{
-				   cout << "Your " << colores[tb.getColor()] << " box of toys contains " << tb.getItem() << ";"<<endl <<  "Your box of magic contains the tricks : "<<endl << mb.getItem()<<".";
+				   cout << "Your " << colores[tb.getColor()] << " box of toys contains " << items << ";" << endl << "Your box of magic contains the tricks : "<< mItems;
+				mainMenu = true;
 				break;
 			}
 
 		}
 	}
 	
-	system("pause");
+	cout << endl;
+	system("pause>nul");
 	return 0;
 }
